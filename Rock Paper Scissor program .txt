@@ -1,0 +1,41 @@
+Rock Paper Scissor
+<html>
+<head>
+
+-title>Rock, Paper, Scissors</title>
+</head>
+<body>
+
+<ht>Rock, Paper, Scissors</h1>
+jayGame(rock’)"»Rock</button>
+layGame(paper)">Paper</button>
+
+<p id="result’></p>
+
+<script>
+function playGame(userChoice) {
+const choices = ["rock’, "paper”, "scissors'];
+const computerChoice
+choices[Math.floor(Math.random( * choices.length)];
+let result;
+
+Yelse if (
+(userChoice === "rock" && computerChoice ===
+“scissors’) ||
+(userChoice === ‘paper” && computerCholc
+rock’) ||
+(userChoice === "scissors” && computerChoic
+"paper’)
+Mt
+result = "You win!";
+jelse {
+result = "You lose!";
+,
+
+document. getElementByid(‘result’).innerText =
+“You chose ${userChoice}, Computer chose $
+{computerChoice). ${result};
+,
+</script>
+</body>
+</html>
