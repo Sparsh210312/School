@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Storybook</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            overflow: hidden; /* Prevents scrollbars */
+        }
+
+        #story-container {
+            width: 800px; /* Adjust as needed */
+            height: 600px; /* Adjust as needed */
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .page {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0; /* Initially hide all pages */
+            transition: opacity 0.5s ease-in-out; /* Smooth fade-in/out */
+        }
+
+        .page.active {
+            opacity: 1; /* Show the active page */
+        }
+
+        .page img {
+            max-width: 90%;
+            max-height: 70%;
+            margin-bottom: 20px;
+        }
+
+        .page h2 {
+            margin-top: 0;
+        }
+
+        #controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="story-container">
+        <div class="page active">  <img src ="https://th.bing.com/th/id/R.3ba549777e74628cdeec1dc37e53b187?rik=Ba31b95CbOTQGg&riu=http%3a%2f%2fthumbs.dreamstime.com%2fz%2flion-mouse-6672883.jpg&ehk=JKRQ9ZjjRiDxiCHLX87JEGsvZjA6h9HNURswmUKAPMI%3d&risl=&pid=ImgRaw&r=0">
+            <h2>Page 1: The Beginning</h2>
+            <p>Once upon a time in a dense jungle, there lived a mighty lion named Leo who was the king of the forest. One hot afternoon, after a heavy meal, Leo was taking a nap under the shade of a large tree. Unbeknownst to him, a tiny mouse named Mimi scurried by, accidentally running across his paw.
+
+Startled, Leo woke up and caught Mimi with his sharp claws. Trembling with fear, Mimi begged for her life, saying, "Oh mighty King, please let me go! If you spare my life today, I promise to repay your kindness someday.</p>
+        </div>
+
+        <div class="page active">
+            <img src="https://th.bing.com/th/id/OIP.Jp6vpu4-kdvrRH_ouQcSBQAAAA?w=322&h=181&c=7&r=0&o=5&pid=1.7">
+            <h2>Page 2: The Adventure</h2>
+            <p>...Amused by the tiny creature's plea, Leo laughed heartily. "You? Help me? How could a little mouse like you ever help the king of the jungle?" Nevertheless, in a moment of mercy, Leo decided to let Mimi go, thinking it would be entertaining to see if she could ever keep her promise.
+
+Days turned into weeks, and weeks into months. One day, while prowling through the forest, Leo got caught in a hunter's net. Despite his strength and might, he couldn’t free himself. As he struggled, his roars echoed through the jungle, attracting the attention of the animals, including Mimi.
+        </p>
+        </div>
+
+        <div class="page active">
+            <img src="https://th.bing.com/th/id/OIP.FJ2D4Us5edSzgCnpwZMrdgHaE8?w=246&h=180&c=7&r=0&o=5&pid=1.7">
+            <h2>Page 3: The Conclusion</h2>
+            <p>Recognizing Leo’s roar, Mimi rushed to the scene. Seeing the king in distress, she quickly set to work, gnawing through the ropes with her sharp teeth. After a while, Mimi managed to free Leo from the hunter’s net.
+
+With a grateful look in his eyes, Leo said, "Thank you, little friend. You have indeed repaid my kindness. I underestimated you, but now I see that even the smallest of creatures can make a big difference."
+
+From that day on, Leo and Mimi became great friends. Leo learned to appreciate the value of kindness and the importance of every creature in the jungle, no matter how big or small.
+
+And they lived happily ever after.</p>
+        </div>
+
+    <div id="controls">
+        <button onclick="prevPage()">Previous Page</button>
+        <button onclick="nextPage()">Next Page</button>
+    </div>
+
+    <script>
+        let currentPage = 0;
+        const pages = document.querySelectorAll('.page');
+
+        function showPage(pageIndex) {
+            pages.forEach((page, index) => {
+                if (index === pageIndex) {
+                    page.classList.add('active');
+                } else {
+                    page.classList.remove('active');
+                }
+            });
+        }
+
+        function nextPage() {
+            currentPage = Math.min(currentPage + 1, pages.length - 1);
+            showPage(currentPage);
+        }
+
+        function prevPage() {
+            currentPage = Math.max(currentPage - 1, 0);
+            showPage(currentPage);
+        }
+
+        showPage(0); // Show the first page initially
+    </script>
+
+</body>
+</html>
