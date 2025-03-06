@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Positive or Negative Integer</title>
+</head>
+<body>
+
+<h2><b><i>Positive or Negative</b></i></h2>
+
+<p>Enter an integer:</p>
+<input type="number" id="num4">
+<button onclick="checkPositiveNegative()">Check +/-</button>
+<p id="result3"></p>
+
+<script>
+
+function checkPositiveNegative() {
+  let num = parseInt(document.getElementById("num4").value);
+  document.getElementById("result3").innerHTML = (num > 0) ? "+Ve" : (num < 0) ? "-Ve" : "Neither +Ve Nor -Ve";
+}
+</script>
+</body>
+</html>
