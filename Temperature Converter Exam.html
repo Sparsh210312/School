@@ -1,0 +1,19 @@
+html>
+<head>
+<title>Temperature Converter</title>
+</head>
+<h1><b><i>Temperature Converter</b></i></h1>
+
+<script>
+function CToF(C) {
+  return (C * 9/5) + 32;
+}
+
+let C = parseFloat(prompt("Enter temperature in Celsius:"));
+let F = CToF(C);
+alert(C + "°C is equal to " + F + "°F");
+</script>
+</body>
+</html>
+
+
